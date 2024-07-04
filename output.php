@@ -2,11 +2,6 @@
 // // PHP create HTML element Class by : Ali Borsan
 require_once 'HTML_element.php';
 
-//Defining an array for the attributes
-$main_attributes = array('id' => 'main', 'class' => 'container', 'name' => 'main', 'style' => 'font-size:1.2em;color:#714d0a');
-$attributes_empty = [];
-$main = new HTML_element('main');
-$main->setAttributes($main_attributes);
 //Create input element
 //Defining an array for the attributes
 $input_attributes = array('type' => 'text','id' => 'input', 'class' => 'input', 'name' => 'text-input', 'style' => 'font-size:1.2em;color:#714d0a','value' => 'Test');
@@ -40,11 +35,23 @@ $image_output =  $image->input_html();
 $container_attributes = array('id' => 'form-container', 'class' => 'container', 'name' => 'form-container', 'style' => 'font-size:1.2em;color:#714d0a');
 $container = new HTML_element('div');
 $container->setAttributes($container_attributes);
+//Creat an a link element using properties in only three lines
+$alink = new HTML_element('a');
+$alink->setAttributes(array('href' => 'https://github.com/AliBorsan'));
+$visit_me =  $alink->container_html('Visit me on Github');
+
+
 // pack the form inside the container
-echo $container->container_html($form_headding .$simple_form . $image_output);
+$form_container =  $container->container_html($form_headding .$simple_form . $image_output);
+$main_attributes = array('id' => 'main', 'class' => 'container', 'name' => 'main', 'style' => 'font-size:1.2em;color:#714d0a');
+$attributes_empty = [];
+$main = new HTML_element('main');
+$main->setAttributes($main_attributes);
+echo $main->container_html($form_container. $visit_me);
 // the output of the form
 if(isset($_POST['submit'])){
 
     $output = $_POST['text-input'];
+    $output = htmlspecialchars($output);
     echo $output;
 }
