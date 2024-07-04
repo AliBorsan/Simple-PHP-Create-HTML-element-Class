@@ -35,7 +35,7 @@ $simple_form = $form->container_html($text_input . $submit_button);
 $image_attributes = array('src' => 'output-dom.JPG','id' => 'img', 'class' => 'img', 'height' => '300px','width' => '700px', 'alt' => '');
 $image = new  HTML_element('img');
 $image->setAttributes($image_attributes);
-$image_output =  $image->image_html();
+$image_output =  $image->input_html();
 //Create a div container
 $container_attributes = array('id' => 'form-container', 'class' => 'container', 'name' => 'form-container', 'style' => 'font-size:1.2em;color:#714d0a');
 $container = new HTML_element('div');
