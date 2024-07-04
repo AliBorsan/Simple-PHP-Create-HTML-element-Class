@@ -27,7 +27,7 @@ $form->setAttributes(['name' => 'gen-form',' action' => htmlspecialchars($_SERVE
 //pack the inputs inside the form
 $simple_form = $form->container_html($text_input . $submit_button);
 // create after form image
-$image_attributes = array('src' => 'output-dom.JPG','id' => 'img', 'class' => 'img', 'height' => '300px','width' => '700px', 'alt' => '');
+$image_attributes = array('src' => 'parrot.png','id' => 'img', 'class' => 'img', 'height' => '120px','width' => '120px', 'alt' => '');
 $image = new  HTML_element('img');
 $image->setAttributes($image_attributes);
 $image_output =  $image->input_html();
@@ -37,8 +37,8 @@ $container = new HTML_element('div');
 $container->setAttributes($container_attributes);
 //Creat an a link element using properties in only three lines
 $alink = new HTML_element('a');
-$alink->setAttributes(array('href' => 'https://github.com/AliBorsan'));
-$visit_me =  $alink->container_html('Visit me on Github');
+$alink->setAttributes(array('href' => htmlspecialchars('https://github.com/AliBorsan')));
+$visit_me =  $alink->container_html('Visit me on Github @');
 
 
 // pack the form inside the container
@@ -53,5 +53,6 @@ if(isset($_POST['submit'])){
 
     $output = $_POST['text-input'];
     $output = htmlspecialchars($output);
-    echo $output;
+    echo "<br />";
+    echo "Form output : " . $output;
 }
