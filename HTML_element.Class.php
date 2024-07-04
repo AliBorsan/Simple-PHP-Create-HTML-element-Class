@@ -1,6 +1,6 @@
 <?php
 // PHP create HTML element Class by : Ali Borsan
-class htmlElement
+class HTML_element
 {
     private $attributes = [];
     private $tag;
