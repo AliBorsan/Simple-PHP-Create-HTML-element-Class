@@ -32,7 +32,7 @@ $form->setAttributes(['name' => 'gen-form',' action' => htmlspecialchars($_SERVE
 //pack the inputs inside the form
 $simple_form = $form->container_html($text_input . $submit_button);
 // create after form image
-$image_attributes = array('src' => 'output-dom.JPG','id' => 'img', 'class' => 'img', 'height' => '300px','width' => '700px');
+$image_attributes = array('src' => 'output-dom.JPG','id' => 'img', 'class' => 'img', 'height' => '300px','width' => '700px', 'alt' => '');
 $image = new  HTML_element('img');
 $image->setAttributes($image_attributes);
 $image_output =  $image->image_html();
