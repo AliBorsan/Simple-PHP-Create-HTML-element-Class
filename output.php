@@ -3,21 +3,21 @@
 require_once 'HTML_element.Class.php';
 
 //Defining an array for the attributes
-$main_args = array('id' => 'main', 'class' => 'container', 'name' => 'main', 'style' => 'font-size:1.2em;color:#714d0a');
-$args_empty = [];
+$main_attributes = array('id' => 'main', 'class' => 'container', 'name' => 'main', 'style' => 'font-size:1.2em;color:#714d0a');
+$attributes_empty = [];
 $main = new HTML_element('main');
-$main->setAttributes($main_args);
+$main->setAttributes($main_attributes);
 //Create input element
 //Defining an array for the attributes
-$input_args = array('type' => 'text','id' => 'input', 'class' => 'input', 'name' => 'text-input', 'style' => 'font-size:1.2em;color:#714d0a','value' => 'Test');
+$input_attributes = array('type' => 'text','id' => 'input', 'class' => 'input', 'name' => 'text-input', 'style' => 'font-size:1.2em;color:#714d0a','value' => 'Test');
 $input = new  HTML_element('input');
-$input->setAttributes($input_args);
+$input->setAttributes($input_attributes);
 $text_input =  $input->input_html();
 //Create button element
 //Defining an array for the attributes
-$button_args = array('type' => 'submit','id' => 'button', 'class' => 'btn', 'name' => 'submit', 'style' => 'font-size:1.2em;color:#714d0a','value' => 'Submit');
+$button_attributes = array('type' => 'submit','id' => 'button', 'class' => 'btn', 'name' => 'submit', 'style' => 'font-size:1.2em;color:#714d0a','value' => 'Submit');
 $button = new HTML_element('input');
-$button->setAttributes($button_args);
+$button->setAttributes($button_attributes);
 $submit_button =  $button->input_html();
 //Create form element
 $form = new HTML_element('form');
@@ -27,9 +27,9 @@ $form->setAttributes(['name' => 'gen-form',' action' => htmlspecialchars($_SERVE
 //pack the inputs inside the form
 $simple_form = $form->container_html($text_input . $submit_button);
 //Create a div container
-$container_args = array('id' => 'form-container', 'class' => 'container', 'name' => 'form-container', 'style' => 'font-size:1.2em;color:#714d0a');
+$container_attributes = array('id' => 'form-container', 'class' => 'container', 'name' => 'form-container', 'style' => 'font-size:1.2em;color:#714d0a');
 $container = new HTML_element('div');
-$container->setAttributes($container_args);
+$container->setAttributes($container_attributes);
 // pack the form inside the container
 echo $container->container_html($simple_form);
 // the output of the form
