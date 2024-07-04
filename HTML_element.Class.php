@@ -16,6 +16,7 @@ class HTML_element
     }
 
     // This method construct the creation of an HTML container element
+    // Fits for all opening and closing HTML tags and all none void elements
     public function container_html($innerHTML = '')
     {
     $container_html = "<{$this->tag}";
@@ -27,6 +28,7 @@ class HTML_element
     return $container_html;
     }
     // This method construct the creation of an HTML input element
+    // Fits for all self-enclosing HTML tags and void elements
     public function input_html($innerHTML = '')
     {
         $input_html = "<{$this->tag}";
@@ -37,14 +39,6 @@ class HTML_element
 
     return $input_html;
     }
-    // This method construct the creation of an HTML image element
-        public function image_html($innerHTML = '')
-    {
-    $image_html = "<{$this->tag}";
-    foreach ($this->attributes as $key => $value) {
-    $image_html .= ' ' . $key . '="' . $value . '"';
-    }$image_html .= ' >';
 
-    return $image_html;
-    }
+
 }
