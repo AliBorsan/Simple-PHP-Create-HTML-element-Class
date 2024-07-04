@@ -37,4 +37,14 @@ class HTML_element
 
     return $input_html;
     }
+    // This method construct the creation of an HTML image element
+        public function image_html($innerHTML = '')
+    {
+    $image_html = "<{$this->tag}";
+    foreach ($this->attributes as $key => $value) {
+    $image_html .= ' ' . $key . '="' . $value . '"';
+    }$image_html .= ' >';
+
+    return $image_html;
+    }
 }
