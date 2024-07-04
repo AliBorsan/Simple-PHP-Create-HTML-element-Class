@@ -9,7 +9,7 @@ The class has three main methods:
   This methods collects the attributes from the object and prepare them to be used in its output.
 - container_html($innerHTML = ''):
   This method construct the creation of an HTML container element.
-  The method Fits for all opening and closing HTML tags and all none void elements like "<div> </div>" ...tec.
+  The method Fits for all opening and closing HTML tags and all none void elements like "div, p, header, footer, lists, tables, forms, ...tec" .
 - input_html($innerHTML = ''):
       This method construct the creation of an HTML input element
-    The method fits for all self-enclosing HTML tags and void elements like "<img src ="" alt= "" /> and "<input type="text" value="value" />" ...tec.
+    The method fits for all self-enclosing HTML tags and void elements like "img , input, br, hr, link ,  ...tec".
