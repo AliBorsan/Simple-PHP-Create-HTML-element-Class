@@ -11,7 +11,7 @@ class HTML_element
     public function setAttributes(array $args){
         $this->attributes =  $args;
         }
-        public function gettAtributes(){
+        public function getAttributes(){
             return $this->attributes;
             }
 
