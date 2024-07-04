@@ -1,6 +1,6 @@
 <?php
 // // PHP create HTML element Class by : Ali Borsan
-require_once 'HTML_element.Class.php';
+require_once 'HTML_element.php';
 
 //Defining an array for the attributes
 $main_attributes = array('id' => 'main', 'class' => 'container', 'name' => 'main', 'style' => 'font-size:1.2em;color:#714d0a');
